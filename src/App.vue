@@ -1,30 +1,50 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <div class="row w-100" d-flex justify-content-center align-items-center>
+      <div class="card">
+        <Header/>
+        <Todo/>
+        <Todolist/>
+        <Footer/>
+      </div>
+    </div>
   </div>
-  <router-view/>
 </template>
 
-<style>
+<script>
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import Todo from './components/Todo.vue'
+import Todolist from './components/Todolist.vue'
+export default {
+  name:'App',
+  components:{
+    Todo,
+    Todolist,
+    Header,
+    Footer,
+  }
+  
+}
+</script>
+
+<style >
+* {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.card{
+  min-height: 500px;
+  width: 50%;
 }
 </style>
